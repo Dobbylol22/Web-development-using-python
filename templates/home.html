@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Project</title>
+  <link rel="icon" type="text/css" href="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image:url('http://www.latestseotutorial.com/wp-content/uploads/2016/12/hd-images-1.png')">
+<!--Navbar-->
+<nav class="navbar navbar-expand-sm bg-default navbar-primary">
+<a class="nav-brand" href="{{url_for('home')}}">
+	<img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="logo" style="width: 40px"></a>
+<!--link-->
+&nbsp
+<ul class="navbar-nav">
+	<li class="nav-item">
+    {%if 'email' in session%}
+		<a class="new-link" href="{{url_for('newitem')}}"><h3 class="text-danger"> <b>NewItem</b> </h3></a>{%endif%}
+    </li>
+  </ul>
+&nbsp&nbsp&nbsp
+<ul class="navbar-nav">
+	<li class="nav-item">
+		<a class="new-link" href="{{url_for('register')}}"><h3 class="text-danger"><b> Register</b></h3></a>
+    </li>
+  </ul>&nbsp&nbsp&nbsp
+<ul class="navbar-nav">
+	<li class="nav-item">
+    {%if 'email' in session%}
+    <a href="{{url_for('logout')}}" class="text-warning"><i>{{session['email']}} Logout</i></a>
+    {%else%}
+		<a class="new-link" href="{{url_for('login')}}"><h3 class="text-danger"><b> Login</b></h3></a>
+    {%endif%}
+    </li>
+  </ul>
+</nav>
+{% with messages=get_flashed_messages(with_categories=true)%}
+{% if messages%}
+{%for category,message in messages%}
+<div class="alert alert-{{category}} alert-dismissible">
+  <a href="#" class="close" data-dismiss='alert' aria-label='close'>&times;</a>
+  {{message}}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

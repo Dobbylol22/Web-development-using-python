@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="multi.css">
+<head>
+	<title>Multiplication</title>
+</head>
+<div class="hero">
+<body>
+<table border=1>
+{% for i in range (m)%}
+<tr>
+{% for j in range(11)%}<td>
+{{i}}*{{j}}={{(i*j)}}
+{% endfor %}</td>
+{% endfor %}</tr>
+</table></body>
+</div>
+</html>
+
+
+

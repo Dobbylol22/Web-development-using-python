@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+{% block content%}
+<div class="container col-md-5 offset-3 pt-5">
+<div class="border bg-default">
+<center><h1 class="text-light"><b><u>New Item</u></b></h1></center>
+<form action="{{url_for('newitem')}}" method="POST" class="md-5">
+<div class="from-group">
+   <label for="brandname"><h2 class="text-light">Brandname:</h2></label>
+   <input type="text" class="form-control" name="brandname" placeholder="Enter ur brandname:" id="brandname" required="required"></div>
+ <div class="from-group">
+   <label for="image"><h2 class="text-light">ImageUrl:</h2></label>
+   <input type="text" class="form-control" name="image" placeholder="Enter ur ImageUrl:" id="image" required="required"></div>
+<div class="from-group">
+   <label for="model"><h2 class="text-light">Model:</h2></label>
+   <input type="text" class="form-control" name="model" placeholder="Enter ur modelname:" id="model" required="required"></div>
+<div class="from-group">
+   <label for="cost"><h2 class="text-light">Cost:</h2></label>
+   <input type="text" class="form-control" name="cost" placeholder="Enter the price:" id="cost" required="required"></div>
+ <div class="from-group">
+   <label for="description"><h2 class="text-light">Description:</h2></label>
+   <input type="text" class="form-control" name="desc" placeholder="Enter the description:" id="desc" required="required"></div>
+   <input type="submit" value="newitem" class="btn btn-success btn-block">
+</form>
+</div>
+</div>
+ {% endblock %}
+   

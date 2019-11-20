@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LEAP YEAR</title>
+</head>
+<body>
+{% for i in range(l,m) %}
+{% if i%4==0 or i%100==0 and i%400==0 %}
+ <h3 style="color: red">Leap year:{{i}}</h3>
+ 
+ {% else %}
+ <h3>Not a leap year</h3>
+ {% endif %}
+ {% endfor %}
+
+</body>
+</html>

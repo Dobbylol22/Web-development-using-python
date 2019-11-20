@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EVEN OR ODD</title>
+</head>
+<body>
+	<h2>List of Numbers:</h2>
+<h3>Even numbers from the list</h3>
+{% for i in l %}
+{% if i%2==0 %}
+{{i}}
+{% endif %}
+{% endfor %}
+</body>
+</html>

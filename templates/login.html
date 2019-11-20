@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="container col-md-5 offset-3 pt-5">
+<div class="border bg-default">
+<center><h1 class="text-light"><b><u>Login Here</u></b></h1></center>
+<form action="{{url_for('login')}}" method="POST" class="md-5">
+<div class="form-group">
+	<label for="email"><h2 class="text-light">Email:</h2></label>
+	<input type="text" name="email" class="form-control" name="email" placeholder="Enter ur email" id="email" required="required">
+</div>
+<div class="form-group">
+	<label for="password"><h2 class="text-light">Password</h2></label>
+	<input type="password" name="pass" class="form-control" name="pass" placeholder="Enter ur password" id="password" required="required">
+</div>
+<input type="submit" value="login" class="btn btn-success btn-block">
+</div>
+</div>
+{% endblock %}

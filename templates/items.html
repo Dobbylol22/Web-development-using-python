@@ -1,0 +1,27 @@
+{%extends 'home.html'%}
+{%block content %}
+<center><h1><p class="text-light">ALL_Items</p></h1></center>
+<div class="container">
+<div class="card-deck">
+	{% for item in items%}
+  <div class="card text">
+  	<h4 class="card-title text-default" >{{item.brandname}}</h4>
+  	<img class="card-img-top" src="{{item.image}}" alt="Card image" style="width:200px""height:200px">
+  <div class="card-body"><br><br><br>
+  	<button type="button" class="btn btn-warning" data-toggle="collapse" title="Click more details" data-target="#demo{{item.id}}">Details</button>
+  	<div id="demo{{item.id}}" class="collapse" style="position:absolute; z-index:1;background:#A9DFBF;padding:8px;box-shadow: 0px 0px 4px #FF334F;">
+    <p class="card-text">Model:-{{item.model}}</p>
+  	<p class="card-text">Cost:-{{item.cost}}</p>
+  	<p class="card-text">Description:-{{item.description}}</p>
+  </div>
+  {% if 'email' in session%}
+  	<a href="{{url_for('edititem',item_id=item.id)}}" class="btn btn-primary">Edit</a>
+  	<a href="{{url_for('deleteitem',item_id=item.id)}}" class="btn btn-primary">Delete</a>
+  {%endif%}
+  </div>
+ </div>
+  {%endfor %}
+</div>
+</div>
+
+{%endblock%}

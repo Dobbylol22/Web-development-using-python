@@ -1,0 +1,29 @@
+what is flask?
+ flask is a web micro frame work in python.
+Armin Ronacher, who leads an international group of Python enthusiasts named pocco, develops it.
+Flask is based on Werkzeug WSGI toolkit and Jinja2 template engine.
+Both are Pocco projects.
+
+WSGI
+----
+Web Server Gateway Interface has been adopted as a standard for python web application development.
+WSGI is a specification for a universal interface between the web server and web application.
+
+JINJA2
+---------
+Jinja2 is a popular templating engine for python .
+A web templating system combines a template with a certain data source to render dynamic web pages.
+
+A Jinja template is simply a text file. Jinja can generate any text based format (Html,Xml,CSV,Latex,etc). A jinja template doesn't need to have a specific extension: .html, .xml, or anyother extensions is just fine.
+
+Delimeters
+---------------
+{% ... %}------ statements
+{ { .... } }--------Expression
+{# ... # }--------comments
+{ % extends 'filename.html' %}
+{% block content %}
+{% end block%}
+
+{ % for i in items % }
+{ % end for %}

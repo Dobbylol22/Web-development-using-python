@@ -1,0 +1,27 @@
+ {% extends 'home.html' %}
+{% block content%}
+<div class="container col-md-5 offset-3 pt-5">
+<div class="border bg-default">
+<center><h1 class="text-light"><b><u>UPDATE</u></b></h1></center>
+<form action="{{url_for('edititem',item_id=item.id)}}" method="POST" class="md-5">
+<div class="from-group">
+   <label for="brandname"><h2 class="text-light">Brandname:</h2></label>
+   <input type="text" class="form-control" name="brandname" id="brandname" value="{{item.brandname}}"></div>
+ <div class="from-group">
+   <label for="image"><h2 class="text-light">ImageUrl:</h2></label>
+   <input type="text" class="form-control" name="image" id="image" value="{{item.imgae}}"></div>
+<div class="from-group">
+   <label for="model"><h2 class="text-light">Model:</h2></label>
+   <input type="text" class="form-control" name="model" id="model" value="{{item.model}}"></div>
+<div class="from-group">
+   <label for="cost"><h2 class="text-light">Cost:</h2></label>
+   <input type="text" class="form-control" name="cost" id="cost" value="{{item.cost}}"></div>
+ <div class="from-group">
+   <label for="description"><h2 class="text-light">Description:</h2></label>
+   <input type="text" class="form-control" name="desc" id="desc" value="{{item.description}}"></div>
+   <input type="submit" value="update" class="btn btn-success btn-block">
+</form>
+</div>
+</div>
+ {% endblock %}
+   
